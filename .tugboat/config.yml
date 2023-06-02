@@ -4,6 +4,6 @@ services:
     expose: 3000
     commands:
       init:
-        - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+        - npm install
       build:
         - echo "hello"
