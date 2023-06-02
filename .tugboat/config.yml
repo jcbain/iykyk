@@ -6,4 +6,4 @@ services:
       init:
         - npm install
       build:
-        - echo "hello"
+        - npm start
