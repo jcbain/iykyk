@@ -4,6 +4,6 @@ services:
     expose: 3000
     commands:
       init:
-        - npm install
+        - npm run build --prefix "${TUGBOAT_ROOT}"
       build:
-        - npm start
+        - echo "hello"
