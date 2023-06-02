@@ -1,9 +1,18 @@
 services:
+  nginx:
+    image: tugboat/ngnix
+    default: true
+    depends: node
+    commands:
+      init:
+        - ln -snf "${TUGBOAT_ROOT}/build" "${DOCROOT}"
   node:
     image: tugboatqa/node:16
     expose: 3000
     commands:
-      init:
-        - npm run  --prefix "${TUGBOAT_ROOT}" build
+      update:
+        - npm install
       build:
-        - echo "hello"
+        - npm run build
+      online:
+        - rm -rf node_modules
