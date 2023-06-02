@@ -1,0 +1,9 @@
+services:
+  node:
+    image: tugboatqa/node:16
+    expose: 3000
+    commands:
+      init:
+        - ln -snf "${TUGBOAT_ROOT}" "${DOCROOT}"
+      build:
+        - echo "hello"
